@@ -11,6 +11,7 @@
 		BD72819E2BE84B4800DA271E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD72819D2BE84B4800DA271E /* ContentView.swift */; };
 		BD7281A02BE84B5C00DA271E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD72819F2BE84B5C00DA271E /* Assets.xcassets */; };
 		BD7281A32BE84B5C00DA271E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD7281A22BE84B5C00DA271E /* Preview Assets.xcassets */; };
+		BDBF82882BE85D6100BDA959 /* NewToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBF82872BE85D6100BDA959 /* NewToDoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		BD72819D2BE84B4800DA271E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BD72819F2BE84B5C00DA271E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD7281A22BE84B5C00DA271E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BDBF82872BE85D6100BDA959 /* NewToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				BD72819B2BE84B4800DA271E /* ToDoListApp.swift */,
 				BD72819D2BE84B4800DA271E /* ContentView.swift */,
+				BDBF82872BE85D6100BDA959 /* NewToDoView.swift */,
 				BD72819F2BE84B5C00DA271E /* Assets.xcassets */,
 				BD7281A12BE84B5C00DA271E /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDBF82882BE85D6100BDA959 /* NewToDoView.swift in Sources */,
 				BD72819E2BE84B4800DA271E /* ContentView.swift in Sources */,
 				BD72819C2BE84B4800DA271E /* ToDoListApp.swift in Sources */,
 			);
