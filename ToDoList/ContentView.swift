@@ -6,33 +6,56 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
 @State private var showNewTask = false
-var body: some View {
-    VStack{
-        HStack {
-            Text("To Do List")
-                .font(.system(size: 40))
-                .fontWeight(.black)
+@Query var toDos: [ToDoItem]
+    @Environment(\.modelContext) var modelContext
+    
+    var body: some View {
+        VStack{
+            HStack {
+                Text("To Do List")
+                    .font(.system(size: 40))
+                    .fontWeight(.black)
                 
-Spacer()
-            Button {
-                withAnimation{
-                self.showNewTask = true
+                Spacer()
+                Button {
+                    withAnimation{
+                        self.showNewTask = true
+                    }
+                }label: {
+                    Text("+")
+                        .font(.system(size: 50))
+                }
             }
-        }label: {
-            Text("+")
-                .font(.system(size: 50))
-        }
+            .padding()
+            Spacer()
+            
+            List {
+                ForEach (toDos) { toDoItem in
+                    if toDoItem.isImportant == true {
+                        Text("‼️" + toDoItem.title)
+                    } else {
+                        Text(toDoItem.title)
+                    }
+                }
+                .onDelete(perform: deleteToDo)
             }
-        .padding()
-Spacer()
+            .listStyle(.plain)
+            
         }
-    if showNewTask{
-        NewToDoView()
-    }
+        if showNewTask {
+            NewToDoView(showNewTask: $showNewTask, toDoItem: ToDoItem(title: "", isImportant: false))
+        }
 
+    }
+func deleteToDo(at offsets: IndexSet) {
+    for offset in offsets {
+        let toDoItem = toDos[offset]
+        modelContext.delete(toDoItem)
+        }
     }
 }
 
