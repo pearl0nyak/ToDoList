@@ -50,6 +50,15 @@ let toDo = ToDoItem(title: toDoItem.title, isImportant: toDoItem.isImportant)
     }
 }
 
+#Preview {
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try! ModelContainer(for: ToDoItem.self, configurations: config)
+
+    let toDo = ToDoItem(title: "Example ToDo", isImportant: false)
+    return NewToDoView(showNewTask:.constant(true), toDoItem: toDo)
+        .modelContainer(container)
+}
+
 //#Preview {
  //   NewToDoView()
 //}
